@@ -57,3 +57,11 @@
 }
 
 /* Sidebar-Search Css*/
+
+/* Sidebar-Chats Css*/
+.sidebar__chats {
+  flex: 1;
+  background-color: white;
+  overflow: scroll;
+}
+/* Sidebar-Chats Css*/
