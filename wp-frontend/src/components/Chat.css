@@ -28,3 +28,41 @@
 }
 
 /* Chat-Header Css*/
+
+/* Chat-Body Css*/
+.chat__body {
+  flex: 1;
+  background-image: url("https://i.pinimg.com/474x/7d/c1/3e/7dc13e1f90ecfe9688816fd23c6d7109.jpg");
+  background-repeat: repeat;
+  background-position: center;
+  padding: 30px;
+  overflow: scroll;
+}
+
+.chat__message {
+  position: relative;
+  font-size: 16px;
+  padding: 10px;
+  width: fit-content;
+  border-radius: 10px;
+  background-color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.chat__reciever{
+  margin-left: auto;
+  background-color: #dcf8c6;
+}
+
+.chat__timestamp {
+  margin-left: 16px;
+  font-size: xx-small;
+}
+
+.chat__name {
+  position: absolute;
+  top: -15px;
+  font-weight: 800;
+  font-size: xx-small;
+}
+/* Chat-Body Css*/
