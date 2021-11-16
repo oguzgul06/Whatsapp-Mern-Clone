@@ -4,6 +4,8 @@ import "./Chat.css";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import AttachFileIcon from "@mui/icons-material/AttachFile";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
+import MicIcon from "@mui/icons-material/Mic";
 
 function Chat() {
   return (
@@ -47,6 +49,15 @@ function Chat() {
           This is the message
           <span className="chat__timestamp">{new Date().toUTCString()}</span>
         </p>
+      </div>
+
+      <div className="chat__footer">
+        <InsertEmoticonIcon />
+        <form>
+          <input placeholder="Type a message" type="text" />
+          <button type="submit">Send a message</button>
+        </form>
+        <MicIcon />
       </div>
     </div>
   );
