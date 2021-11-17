@@ -3,27 +3,23 @@ import express from "express"; //ES6 notation
 import mongoose from "mongoose"; //ES6 notation
 import Messages from "./dbMessages.js";
 import Pusher from "pusher";
+import cors from "cors";
 
 //app config
 const app = express();
 const port = process.env.PORT || 9000;
 
 const pusher = new Pusher({
-  appId: "1298959",
-  key: "85677974eea15293d8c9",
-  secret: "dd8143c207543f2b1c08",
-  cluster: "ap2",
+  appId: "1299118",
+  key: "3402b006dbb3ec2026c9",
+  secret: "192b3f80e06d8038b6b6",
+  cluster: "eu",
   useTLS: true,
 });
 
 //middleware
 app.use(express.json());
-
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Headers", "*");
-  next();
-});
+app.use(cors());
 
 //DB config
 const connection_URL =
@@ -52,6 +48,8 @@ db.once("open", () => {
       pusher.trigger("messages", "inserted", {
         name: messageDetails.user,
         message: messageDetails.message,
+        timestamp: messageDetails.timestamp,
+        received: messageDetails.received,
       });
     } else {
       console.log("Error triggering Pusher");
